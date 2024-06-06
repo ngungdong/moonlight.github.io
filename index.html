@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moonlight Themed Web Page</title>
+    
     <style>
-        /* Global Styles */
         body {
             margin: 0;
             padding: 0;
@@ -16,10 +16,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
         }
 
-        /* Container */
         .container {
             text-align: center;
             padding: 2rem;
@@ -28,7 +26,6 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        /* Header */
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
@@ -36,20 +33,31 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        /* Main Content */
         main p {
             font-size: 1.2rem;
             line-height: 1.6;
+            margin-bottom: 2rem;
         }
 
-        /* Footer */
-        footer p {
+        .button {
+            background-color: #16213e;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
             font-size: 1rem;
-            margin-top: 2rem;
-            color: #b0b0b0;
+            margin: 4px 2px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        /* Animations */
+        .button:hover {
+            background-color: #45a049;
+        }
+
         @keyframes shimmer {
             0% {
                 background-position: -100% 0;
@@ -68,18 +76,38 @@
         }
 
         footer p {
-            animation: fadeIn 3s ease-in;
+            font-size: 1rem;
+            margin-top: 2rem;
+            color: #b0b0b0;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        #fps {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-top: 1rem;
         }
     </style>
+     <script>
+        //fps 
+         function calculateFPS() {
+             let lastFrameTime = performance.now();
+             let frameCounter = 0;
+ 
+             function update() {
+                 const currentTime = performance.now();
+                 const deltaTime = currentTime - lastFrameTime;
+                 lastFrameTime = currentTime;
+                 const fps = Math.round(1000 / deltaTime);
+                 document.getElementById('fps').innerText = `FPS: ${fps}`;
+                 requestAnimationFrame(update);
+             }
+ 
+             update();
+         }
+ 
+       
+         window.addEventListener('load', calculateFPS);
+     </script>
 </head>
 <body>
     <div class="container">
@@ -87,11 +115,15 @@
             <h1>Moonlight Serenity</h1>
         </header>
         <main>
-            <p>Welcome to the moonlight-themed web page. Enjoy the calm and serenity of the night.</p>
+            <p>Welcome to the moonlight-themed web page. Click the button below to view our moonlight images.</p>
+            <button class="button" onclick="window.location.href='subpage.html'">View Images</button>
         </main>
+        <div id="fps"></div>
         <footer>
             <p>&copy; 2024 Moonlight Designs</p>
         </footer>
     </div>
+    
+   
 </body>
 </html>

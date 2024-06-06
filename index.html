@@ -1,8 +1,97 @@
-<html>
-  <heder>
-    <title>MoonLight.cc</title>
-  </heder>
-  <body Align="center">
-    <H1> Welcom To MoonLight.cc</H1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonlight Themed Web Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container */
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header */
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Main Content */
+        main p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer p {
+            font-size: 1rem;
+            margin-top: 2rem;
+            color: #b0b0b0;
+        }
+
+        /* Animations */
+        @keyframes shimmer {
+            0% {
+                background-position: -100% 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        header h1 {
+            background: linear-gradient(to right, #ffffff, #b3b3b3, #ffffff);
+            background-size: 200% auto;
+            animation: shimmer 2s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        footer p {
+            animation: fadeIn 3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Moonlight Serenity</h1>
+        </header>
+        <main>
+            <p>Welcome to the moonlight-themed web page. Enjoy the calm and serenity of the night.</p>
+        </main>
+        <footer>
+            <p>&copy; 2024 Moonlight Designs</p>
+        </footer>
+    </div>
+</body>
 </html>
